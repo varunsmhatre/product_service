@@ -1,9 +1,8 @@
 from product_service.config import settings
 import asyncio
 from fastapi import FastAPI
-from logging import getLogger
+from product_service.root_logger import custom_logger
 
-logger = getLogger(__name__)
 
 class ProductService:
     app = None
@@ -12,5 +11,5 @@ class ProductService:
     def create_app(cls):
         app = FastAPI()
         cls.app = app
-        logger.info('APP Created!!')
+        custom_logger.info('APP Created!!')
         return cls.app

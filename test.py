@@ -7,8 +7,8 @@ from loguru import logger
 def serialize(record):
     subset = {
         "timestamp": str(record["time"]),
-        "message": record["message"],
         "level": record["level"].name,
+        "message": record["message"],
     }
     return json.dumps(subset)
 
