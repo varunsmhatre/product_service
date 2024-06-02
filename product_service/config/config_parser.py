@@ -12,5 +12,7 @@ parser = configargparse.ArgParser(config_file_parser_class=configargparse.YAMLCo
                                   )
 
 parser.add("--port", help="PORT")
+parser.add("--mode", help="MODE")
+
 
 docker_args = parser.parse_known_args(sys.argv)[0]
